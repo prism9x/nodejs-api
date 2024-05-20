@@ -1,0 +1,27 @@
+{
+  "name": "prism-api",
+  "version": "1.0.0",
+  "description": "Prism9x from scratch NodeJS",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prism9x/nodejs-api.git"
+  },
+  "keywords": [
+    "nodejs",
+    "react"
+  ],
+  "author": "Prism9x",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prism9x/nodejs-api/issues"
+  },
+  "homepage": "https://github.com/prism9x/nodejs-api#readme",
+  "dependencies": {
+    "express": "4.18.2"
+  }
+}
