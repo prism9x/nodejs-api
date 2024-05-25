@@ -22,8 +22,17 @@ app.use('/', webRoutes);
 configViewEngine(app);
 
 // test connection
-connection();
 
-app.listen(port, hostname, () => {
-    console.log(`Example app listening ${hostname + ":" + port}`)
-})
+
+(async () => {
+    try {
+        await connection();
+        app.listen(port, hostname, () => {
+            console.log(`Example app listening ${hostname + ":" + port}`)
+        })
+    } catch (error) {
+        console.log(">>> Error connect to DB: ", error);
+    }
+
+})()
+

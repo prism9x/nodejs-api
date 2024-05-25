@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 const dbState = [
     { value: 0, label: "disconnected" },
@@ -9,7 +10,12 @@ const dbState = [
 
 connection = async () => {
     try {
-        await mongoose.connect('mongodb://root:123456@127.0.0.1:27018');
+        const options = {
+            user: process.env.DB_USER,
+            pass: process.env.DB_PASSWORD,
+        }
+
+        await mongoose.connect(process.env.DB_HOST, options);
 
         const state = Number(mongoose.connection.readyState);
 
