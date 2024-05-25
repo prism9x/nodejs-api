@@ -21,6 +21,9 @@ app.use('/', webRoutes);
 // config template engine
 configViewEngine(app);
 
+// test connection
+connection();
+
 app.listen(port, hostname, () => {
     console.log(`Example app listening ${hostname + ":" + port}`)
 })
