@@ -34,18 +34,32 @@
     <div>
         <table>
             <tr>
-                <th>ID</th>
+                <th>Id</th>
                 <th>Email</th>
                 <th>Name</th>
                 <th>City</th>
+                <th>Action</th>
             </tr>
-            <%= JSON.stringify(listUsers) %>
+            <% for (var i=0; i < listUsers.length; i++) { %>
                 <tr>
-                    <td>Peter</td>
-                    <td>Griffin</td>
-                    <td>$100</td>
-                    <td>$100</td>
+                    <td>
+                        <%= listUsers[i].id %>
+                    </td>
+                    <td>
+                        <%= listUsers[i].name %>
+                    </td>
+                    <td>
+                        <%= listUsers[i].email %>
+                    </td>
+                    <td>
+                        <%= listUsers[i].city %>
+                    </td>
+                    <td>
+                        <a href="/update/<%= listUsers[i].id %>">Edit</a>
+                        <button>Delete</button>
+                    </td>
                 </tr>
+                <% } %>
         </table>
     </div>
 </body>
