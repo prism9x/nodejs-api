@@ -1,12 +1,13 @@
 const express = require('express');
+const { getHomePage, getSample, postCreateUser } = require('../controllers/homeController');
 const router = express.Router();
 
-router.get('/abc', (req, res) => {
-    res.send('Check ABC')
-})
 
-router.get('/halo', (req, res) => {
-    res.render('sample.ejs');
-})
+// GET
+router.get('/', getHomePage)
+router.get('/sample', getSample)
+
+// POST
+router.post('/create-user', postCreateUser)
 
 module.exports = router;
