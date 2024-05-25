@@ -38,14 +38,28 @@
                 <th>Email</th>
                 <th>Name</th>
                 <th>City</th>
+                <th>Actions</th>
             </tr>
-            <%= JSON.stringify(listUsers) %>
+            <% listUsers.forEach(function(user, index){ %>
                 <tr>
-                    <td>Peter</td>
-                    <td>Griffin</td>
-                    <td>$100</td>
-                    <td>$100</td>
+                    <td>
+                        <%= user.id %> - <%= index%>
+                    </td>
+                    <td>
+                        <%= user.email %>
+                    </td>
+                    <td>
+                        <%= user.name %>
+                    </td>
+                    <td>
+                        <%= user.city %>
+                    </td>
+                    <td>
+                        <a href="/update/<%= user.id %>">Edit</a>
+                        <button>Delete</button>
+                    </td>
                 </tr>
+                <% }); %>
         </table>
     </div>
 </body>
